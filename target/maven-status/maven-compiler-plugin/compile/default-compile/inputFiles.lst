@@ -1,0 +1,6 @@
+D:\Workspaces\MicroService\sysout_over_logback\src\main\java\org\kst\logback\SysoutPrintStream.java
+D:\Workspaces\MicroService\sysout_over_logback\src\main\java\org\kst\logback\SysoutBridgeHandler.java
+D:\Workspaces\MicroService\sysout_over_logback\src\main\java\org\kst\logback\ClassLoggingConverter.java
+D:\Workspaces\MicroService\sysout_over_logback\src\main\java\org\kst\logback\ConsoleAppender.java
+D:\Workspaces\MicroService\sysout_over_logback\src\main\java\org\kst\logback\ConsoleTarget.java
+D:\Workspaces\MicroService\sysout_over_logback\src\main\java\org\kst\logback\ThreadIdLoggingConverter.java
