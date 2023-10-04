@@ -4,13 +4,6 @@
 	<conversionRule conversionWord="tid" converterClass="org.kst.logback.ThreadIdLoggingConverter" />
 	<conversionRule conversionWord="cid" converterClass="org.kst.logback.ClassLoggingConverter" />
 	
-	<appender name="console"
-		class="ch.qos.logback.core.ConsoleAppender">
-		<layout class="ch.qos.logback.classic.PatternLayout">
-			<Pattern>[%date{HH:mm:ss.SSS}][%tid] %C{1}.%M\(%L\) %m%n</Pattern>
-		</layout>
-	</appender>
-	
 	<appender name="consolex"
 		class="org.kst.logback.ConsoleAppender">
 		<layout class="ch.qos.logback.classic.PatternLayout">
@@ -23,22 +16,17 @@
 		<append>true</append>
 		<file>${LOGS}/logback.log</file>
 			<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<Pattern>[%date{HH:mm:ss.SSS}][%tid] %C{1}.%M\(%L\) %m%n</Pattern>
+			<Pattern>[%date{HH:mm:ss.SSS}][%tid] %m%n</Pattern>
 		</encoder>
 	</appender>
 	
-	<!-- LOG everything at INFO level -->
+	<!-- LOG everything at INFO level 
 	<root level="debug">
 		<appender-ref ref="file" />
 		<appender-ref ref="console" />
-	</root>
+	</root>-->
 	
-	<logger name="oracle.sql" level="debug" additivity="false">
-		<appender-ref ref="file" />
-		<appender-ref ref="console" />
-	</logger>
-	
-	<logger name="com.fss.airtel.LoggerPrintStream" level="trace" additivity="false">
+	<logger name="org.kst.logback.SysoutPrintStream" level="trace" additivity="false">
 		<appender-ref ref="file" />
 		<appender-ref ref="consolex" />
 	</logger>

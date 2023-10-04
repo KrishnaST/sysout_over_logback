@@ -80,6 +80,6 @@ public enum ConsoleTarget {
         return name;
     }
     
-    private static final PrintStream sysout = System.out;
-	private static final PrintStream syserr = System.err;
+    public static final PrintStream sysout = System.out;
+    public static final PrintStream syserr = System.err;
 }

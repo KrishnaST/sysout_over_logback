@@ -8,33 +8,24 @@ import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.bridge.SLF4JBridgeHandler;
 
 public class SysoutPrintStream extends PrintStream {
 
-	static {
-		try {
-			SLF4JBridgeHandler.removeHandlersForRootLogger();
-			SLF4JBridgeHandler.install();
-		} catch (Exception e) {e.printStackTrace();}
-	}
+	private static final PrintStream printer = ConsoleTarget.sysout;
 	
 	private static final Logger log = LoggerFactory.getLogger(SysoutPrintStream.class);
 	
 	public static final SysoutPrintStream INSTANCE = new SysoutPrintStream();
-	
-	private static final PrintStream printer = System.out;
 
 	private SysoutPrintStream() {
 		super(new ByteArrayOutputStream());
-		log.info("LoggerPrintStream");
 	}
 
 	@Override
 	public void print(String s) {
 		StackTraceElement caller = Thread.currentThread().getStackTrace()[2];
 		String location = caller.getClassName() + "." + caller.getMethodName() + "(" + caller.getLineNumber() + ") ";
-		printer.println(location + s);
+		//printer.println(location + s);
 		log.info(location + s);
 
 	}
@@ -43,7 +34,7 @@ public class SysoutPrintStream extends PrintStream {
 	public void print(Object obj) {
 		StackTraceElement caller = Thread.currentThread().getStackTrace()[2];
 		String location = caller.getClassName() + "." + caller.getMethodName() + "(" + caller.getLineNumber() + ") ";
-		printer.println(location + obj);
+		//printer.println(location + obj);
 		log.info(location + obj);
 	}
 
@@ -51,7 +42,7 @@ public class SysoutPrintStream extends PrintStream {
 	public void println() {
 		StackTraceElement caller = Thread.currentThread().getStackTrace()[2];
 		String location = caller.getClassName() + "." + caller.getMethodName() + "(" + caller.getLineNumber() + ") ";
-		printer.println(location);
+		//printer.println(location);
 		log.info(location);
 
 	}
@@ -61,7 +52,7 @@ public class SysoutPrintStream extends PrintStream {
 		try {
 			StackTraceElement caller = Thread.currentThread().getStackTrace()[2];
 			String location = caller.getClassName() + "." + caller.getMethodName() + "(" + caller.getLineNumber() + ") ";
-			printer.println(location + x);
+			//printer.println(location + x);
 			log.info(location + x);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -72,7 +63,7 @@ public class SysoutPrintStream extends PrintStream {
 	public void println(Object x) {
 		StackTraceElement caller = Thread.currentThread().getStackTrace()[2];
 		String location = caller.getClassName() + "." + caller.getMethodName() + "(" + caller.getLineNumber() + ") ";
-		printer.println(location + x);
+		//printer.println(location + x);
 		log.info(location + x);
 	}
 
@@ -80,7 +71,7 @@ public class SysoutPrintStream extends PrintStream {
 	public PrintStream printf(String format, Object... args) {
 		StackTraceElement caller = Thread.currentThread().getStackTrace()[2];
 		String location = caller.getClassName() + "." + caller.getMethodName() + "(" + caller.getLineNumber() + ") ";
-		printer.println(location + Arrays.toString(args));
+		//printer.println(location + Arrays.toString(args));
 		log.info(location + Arrays.toString(args));
 		return this;
 	}
@@ -252,7 +243,7 @@ public class SysoutPrintStream extends PrintStream {
 		StackTraceElement called = Thread.currentThread().getStackTrace()[2];
 		String callerLocation = caller.getClassName() + "." + caller.getMethodName() + "(" + caller.getLineNumber() + ") ";
 		String calledLocation = called.getClassName() + "." + called.getMethodName() + "(" + called.getLineNumber() + ") ";
-		printer.println("caller : "+callerLocation + " : called : "+calledLocation+ " : "+obj);
+		//printer.println("caller : "+callerLocation + " : called : "+calledLocation+ " : "+obj);
 		log.info("caller : "+callerLocation + " : called : "+calledLocation+ " : "+obj);
 	}
 
