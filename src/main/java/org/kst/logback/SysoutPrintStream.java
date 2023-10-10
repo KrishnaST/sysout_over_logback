@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public class SysoutPrintStream extends PrintStream {
 
-	private static final PrintStream printer = ConsoleTarget.sysout;
+	//private static final PrintStream printer = ConsoleTarget.sysout;
 	
 	private static final Logger log = LoggerFactory.getLogger(SysoutPrintStream.class);
 	

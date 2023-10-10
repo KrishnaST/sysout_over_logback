@@ -1,8 +1,0 @@
-org\kst\logback\SysoutPrintStream.class
-org\kst\logback\ConsoleTarget$2.class
-org\kst\logback\ConsoleAppender.class
-org\kst\logback\ThreadIdLoggingConverter.class
-org\kst\logback\SysoutBridgeHandler.class
-org\kst\logback\ConsoleTarget$1.class
-org\kst\logback\ClassLoggingConverter.class
-org\kst\logback\ConsoleTarget.class

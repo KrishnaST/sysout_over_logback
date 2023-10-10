@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<property name="LOGS" value="./logs" />
-	<conversionRule conversionWord="tid" converterClass="com.fss.airtel.logback.ThreadIdLoggingConverter" />
-	<conversionRule conversionWord="cid" converterClass="com.fss.airtel.logback.ClassLoggingConverter" />
+	<conversionRule conversionWord="tid" converterClass="org.kst.logback.ThreadIdLoggingConverter" />
+	<conversionRule conversionWord="cid" converterClass="org.kst.logback.ClassLoggingConverter" />
 	
 	<appender name="console"
 		class="ch.qos.logback.core.ConsoleAppender">
