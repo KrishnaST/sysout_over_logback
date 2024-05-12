@@ -1,4 +1,4 @@
-package org.kst.logback;
+package com.paytech.logback;
 
 import ch.qos.logback.classic.pattern.ClassicConverter;
 import ch.qos.logback.classic.spi.ILoggingEvent;

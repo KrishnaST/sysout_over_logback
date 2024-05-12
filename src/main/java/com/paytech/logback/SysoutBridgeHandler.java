@@ -1,4 +1,4 @@
-package org.kst.logback;
+package com.paytech.logback;
 
 public final class SysoutBridgeHandler {
 

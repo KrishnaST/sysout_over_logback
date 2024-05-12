@@ -1,4 +1,4 @@
-package org.kst.logback;
+package com.paytech.logback;
 
 import java.io.OutputStream;
 import java.io.PrintStream;

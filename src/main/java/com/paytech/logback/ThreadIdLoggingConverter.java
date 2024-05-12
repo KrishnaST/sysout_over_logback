@@ -1,9 +1,9 @@
-package org.kst.logback;
+package com.paytech.logback;
 
-import ch.qos.logback.classic.pattern.ClassicConverter;
 import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.core.pattern.DynamicConverter;
 
-public final class ThreadIdLoggingConverter extends ClassicConverter {
+public final class ThreadIdLoggingConverter extends DynamicConverter<ILoggingEvent> {
 
 	@Override
 	public final String convert(ILoggingEvent event) {
