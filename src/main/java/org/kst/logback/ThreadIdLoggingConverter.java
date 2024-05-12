@@ -6,7 +6,7 @@ import ch.qos.logback.classic.spi.ILoggingEvent;
 public final class ThreadIdLoggingConverter extends ClassicConverter {
 
 	@Override
-	public final String convert(ILoggingEvent arg0) {
+	public final String convert(ILoggingEvent event) {
 		return String.format("%04d", Thread.currentThread().getId());
 	}
 

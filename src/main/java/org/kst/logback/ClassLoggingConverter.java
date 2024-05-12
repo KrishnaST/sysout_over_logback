@@ -6,10 +6,10 @@ import ch.qos.logback.classic.spi.ILoggingEvent;
 public final class ClassLoggingConverter extends ClassicConverter {
 
 	@Override
-	public final String convert(ILoggingEvent arg0) {
+	public final String convert(ILoggingEvent event) {
 		try {
 			String location ="";
-			StackTraceElement[] stack = arg0.getCallerData();
+			StackTraceElement[] stack = event.getCallerData();
 			for (StackTraceElement caller : stack) {
 				location = location + "-" + caller.getClassName() + "." + caller.getMethodName() + "(" + caller.getLineNumber() + ")";
 			}
